@@ -1,18 +1,13 @@
-SRCS	= 	mandatory/ft_printf_utilities.c \
-			mandatory/ft_printf.c \
-
-B_SRCS	=	bonus/ft_printf_flags1_bonus.c \
-			bonus/ft_printf_flags2_bonus.c \
-			bonus/ft_printf_utilities1_bonus.c \
-			bonus/ft_printf_utilities2_bonus.c \
-			bonus/ft_printf_utilities3_bonus.c \
-			bonus/ft_printf_bonus.c \
+SRCS	=	srcs/ft_printf_flags1.c \
+			srcs/ft_printf_flags2.c \
+			srcs/ft_printf_utilities1.c \
+			srcs/ft_printf_utilities2.c \
+			srcs/ft_printf_utilities3.c \
+			srcs/ft_printf.c \
 
 OBJS	= $(SRCS:.c=.o)
 
-B_OBJS	= $(B_SRCS:.c=.o)
-
-HEADS	= headers/
+HEADS	= headers/ft_printf.h
 
 NAME	= libftprintf.a
 
@@ -24,6 +19,8 @@ AR		= ar -crs
 
 RM		= rm -f
 
+
+
 .c.o:
 		$(GCC) -c $(FLAGS) $< -o ${<:.c=.o} -I$(HEADS)
 
@@ -32,11 +29,10 @@ $(NAME): $(OBJS) $(HEADS)
 
 all:	$(NAME)
 
-bonus:	fclean $(B_OBJS) $(HEADS)
-		$(AR) $(NAME) $(B_OBJS)
+bonus:	$(NAME)
 
 clean:
-		$(RM) $(OBJS) $(B_OBJS)
+		$(RM) $(OBJS)
 
 fclean: clean
 		$(RM) $(NAME)
