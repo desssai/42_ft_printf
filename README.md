@@ -19,8 +19,8 @@ The Makefile rules are as follows:
 
 | Rule | Despription |
 | ---- | ----------- |
-| ALL | Compiles the library with the printf that has only the mandatory flags using GCC. |
-| BONUS | Compiles the library with both the mandatory and bonus flags. |
+| ALL | Compiles the library with the printf that has mandatory and bonus flags using GCC. |
+| BONUS | Compiles the library the same way 'ALL' does. |
 | CLEAN | Removes object files leaving only the library present. |
 | FCLEAN | Removes both the library and object files. |
 | RE | Recompiles the library using **CLEAN** and **ALL** Makefile rules |
